@@ -9,10 +9,10 @@ export const login = async (dispatch, user) => {
       user
     );
     dispatch(loginSuccess(res.data));
-    console.log("Успешно");
+    alert("Успешный вход в учетную запись");
   } catch (error) {
     dispatch(loginFailure());
-    console.log("Неуспешно");
+    alert("Неуспешный вход в учетную запись");
   }
 };
 
