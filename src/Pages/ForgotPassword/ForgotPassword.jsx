@@ -5,7 +5,7 @@ export default function ForgotPassword() {
   const [email, setEmail] = useState("");
   const handleclick = async (e) => {
     e.preventDefault();
-    await fetch(`http://localhost:5000/api/user/forgot/password`, {
+    await fetch(`https://mireagram-api.vercel.app/api/user/forgot/password`, {
       method: "POST",
       headers: { "Content-Type": "application/JSON" },
       body: JSON.stringify({ email: email }),

@@ -14,7 +14,7 @@ export default function ProfileMainPost() {
     const getPost = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:5000/api/post/get/post/${id}`
+          `https://mireagram-api.vercel.app/api/post/get/post/${id}`
         );
         setPost(res.data);
       } catch (error) {

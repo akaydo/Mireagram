@@ -16,7 +16,7 @@ export default function ProfileRightbar() {
     const getFollowing = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:5000/api/post/followers/${id}`
+          `https://mireagram-api.vercel.app/api/post/followers/${id}`
         );
         setFollowinguser(res.data);
       } catch (error) {
@@ -31,7 +31,7 @@ export default function ProfileRightbar() {
     const getuser = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:5000/api/user/all/user/${idforSuggest}`
+          `https://mireagram-api.vercel.app/api/user/all/user/${idforSuggest}`
         );
         setUsers(res.data);
       } catch (error) {

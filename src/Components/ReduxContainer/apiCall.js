@@ -4,7 +4,10 @@ import { loginStart, loginSuccess, loginFailure, logout } from "./userReducer";
 export const login = async (dispatch, user) => {
   dispatch(loginStart());
   try {
-    const res = await axios.post("http://localhost:5000/api/user/login", user);
+    const res = await axios.post(
+      "https://mireagram-api.vercel.app/api/user/login",
+      user
+    );
     dispatch(loginSuccess(res.data));
     console.log("Успешно");
   } catch (error) {
@@ -17,7 +20,7 @@ export const VerifyEmail = async (dispatch, user) => {
   dispatch(loginStart());
   try {
     const res = await axios.post(
-      "http://localhost:5000/api/user/verify/email",
+      "https://mireagram-api.vercel.app/api/user/verify/email",
       user
     );
     dispatch(loginSuccess(res.data));
@@ -30,7 +33,7 @@ export const signup = async (dispatch, user) => {
   dispatch(loginStart());
   try {
     const res = await axios.post(
-      "http://localhost:5000/api/user/create/user",
+      "https://mireagram-api.vercel.app/api/user/create/user",
       user
     );
     dispatch(loginSuccess(res.data));

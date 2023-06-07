@@ -18,7 +18,7 @@ export default function Post({ detail }) {
     const getuser = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:5000/api/user/post/user/details/${detail.user}`
+          `https://mireagram-api.vercel.app/api/user/post/user/details/${detail.user}`
         );
         setuser(res.data);
       } catch (error) {

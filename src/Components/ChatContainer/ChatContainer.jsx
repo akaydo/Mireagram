@@ -19,7 +19,7 @@ export default function ChatContainer(currentChatUser) {
     const getMessage = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:5000/api/post/get/chat/msg/${id}/${currentChatUser?.currentChatUser._id}`,
+          `https://mireagram-api.vercel.app/api/post/get/chat/msg/${id}/${currentChatUser?.currentChatUser._id}`,
           {
             headers: {
               token: accesstoken,
@@ -34,7 +34,7 @@ export default function ChatContainer(currentChatUser) {
 
   useEffect(() => {
     if (currentChatUser.currentChatUser !== "") {
-      socket.current = io("http://localhost:5000");
+      socket.current = io("https://mireagram-api.vercel.app");
       socket.current.emit("addUser", id);
     }
   }, [currentChatUser.currentChatUser, id]);
@@ -52,7 +52,7 @@ export default function ChatContainer(currentChatUser) {
       from: id,
       message: inputMessage,
     });
-    fetch(`http://localhost:5000/api/post/msg`, {
+    fetch(`https://mireagram-api.vercel.app/api/post/msg`, {
       method: "POST",
       headers: { "Content-Type": "application/JSON", token: accesstoken },
       body: JSON.stringify({

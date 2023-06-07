@@ -15,7 +15,7 @@ export default function Contact() {
     const getUser = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:5000/api/post/following/${id}`,
+          `https://mireagram-api.vercel.app/api/post/following/${id}`,
           {
             headers: {
               token: accesstoken,

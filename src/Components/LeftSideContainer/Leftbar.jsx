@@ -18,7 +18,7 @@ export default function Leftbar() {
     const getPost = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:5000/api/user/flw/${id}`,
+          `https://mireagram-api.vercel.app/api/user/flw/${id}`,
           {
             headers: {
               token: accesstoken,

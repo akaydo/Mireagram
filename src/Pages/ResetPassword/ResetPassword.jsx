@@ -7,11 +7,14 @@ export default function ResetPassword() {
   const [password, setpassword] = useState("");
   const handleClick = async (e) => {
     e.preventDefault();
-    await fetch(`http://localhost:5000/api/user/reset/password?${code}`, {
-      method: "PUT",
-      headers: { "Content-Type": "application/JSON" },
-      body: JSON.stringify({ password: password }),
-    }).then(() => {
+    await fetch(
+      `https://mireagram-api.vercel.app/api/user/reset/password?${code}`,
+      {
+        method: "PUT",
+        headers: { "Content-Type": "application/JSON" },
+        body: JSON.stringify({ password: password }),
+      }
+    ).then(() => {
       alert("Ваш пароль успешно восстановлен");
     });
   };

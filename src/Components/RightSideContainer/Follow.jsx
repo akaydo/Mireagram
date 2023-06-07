@@ -12,11 +12,14 @@ export default function Follow({ userdetails }) {
   const accessToken = user?.accessToken;
   const [Follow, setFollow] = useState(addFriends);
   const handleFollow = async (e) => {
-    await fetch(`http://localhost:5000/api/user/following/${userdetails._id}`, {
-      method: "PUT",
-      headers: { "Content-Type": "application/JSON", token: accessToken },
-      body: JSON.stringify({ user: `${id}` }),
-    });
+    await fetch(
+      `https://mireagram-api.vercel.app/api/user/following/${userdetails._id}`,
+      {
+        method: "PUT",
+        headers: { "Content-Type": "application/JSON", token: accessToken },
+        body: JSON.stringify({ user: `${id}` }),
+      }
+    );
     setFollow(UserToFollow);
   };
   return (

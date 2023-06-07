@@ -21,7 +21,7 @@ export default function ProfileLeftbar() {
     const getuser = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:5000/api/user/post/user/details/${id}`
+          `https://mireagram-api.vercel.app/api/user/post/user/details/${id}`
         );
         setuser(res.data);
       } catch (error) {
@@ -38,7 +38,7 @@ export default function ProfileLeftbar() {
     const getFollowing = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:5000/api/post/following/${id}`
+          `https://mireagram-api.vercel.app/api/post/following/${id}`
         );
         setFollowinguser(res.data);
       } catch (error) {
@@ -50,14 +50,14 @@ export default function ProfileLeftbar() {
 
   const handleFollow = async () => {
     if (Follow === "Follow") {
-      await fetch(`http://localhost:5000/api/user/following/${id}`, {
+      await fetch(`https://mireagram-api.vercel.app/api/user/following/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/JSON", token: accessToken },
         body: JSON.stringify({ user: `${user.other._id}` }),
       });
       setUnFollow("UnFollow");
     } else {
-      await fetch(`http://localhost:5000/api/user/following/${id}`, {
+      await fetch(`https://mireagram-api.vercel.app/api/user/following/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/JSON", token: accessToken },
         body: JSON.stringify({ user: `${user.other._id}` }),

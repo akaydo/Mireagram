@@ -14,7 +14,7 @@ export default function Rightbar() {
     const getuser = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:5000/api/user/all/user/${id}`
+          `https://mireagram-api.vercel.app/api/user/all/user/${id}`
         );
         setUsers(res.data);
       } catch (error) {

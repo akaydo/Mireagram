@@ -54,7 +54,7 @@ export default function ContentPost() {
           // Handle successful uploads on complete
           // For instance, get the download URL: https://firebasestorage.googleapis.com/...
           getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-            fetch(`http://localhost:5000/api/post/user/post`, {
+            fetch(`https://mireagram-api.vercel.app/api/post/user/post`, {
               method: "POST",
               headers: {
                 "Content-Type": "application/JSON",
@@ -100,7 +100,7 @@ export default function ContentPost() {
           // Handle successful uploads on complete
           // For instance, get the download URL: https://firebasestorage.googleapis.com/...
           getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-            fetch(`http://localhost:5000/api/post/user/post`, {
+            fetch(`https://mireagram-api.vercel.app/api/post/user/post`, {
               method: "POST",
               headers: {
                 "Content-Type": "application/JSON",
@@ -119,7 +119,7 @@ export default function ContentPost() {
         }
       );
     } else {
-      fetch(`http://localhost:5000/api/post/user/post`, {
+      fetch(`https://mireagram-api.vercel.app/api/post/user/post`, {
         method: "POST",
         headers: { "Content-Type": "application/JSON", token: accessToken },
         body: JSON.stringify({ title: title, video: "", image: "" }),
