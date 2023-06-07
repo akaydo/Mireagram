@@ -30,7 +30,6 @@ export default function Contact() {
   const handleUser = (e) => {
     setCurrentChatUser(e);
   };
-  console.log(currentChatUser);
   return (
     <div className="mainContactContainer">
       <div>

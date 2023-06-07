@@ -66,8 +66,6 @@ export default function ProfileLeftbar() {
     }
   };
 
-  console.log(Followinguser);
-
   return (
     <div className="profile-leftbar">
       <div className="notifications-container">

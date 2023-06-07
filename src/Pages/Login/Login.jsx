@@ -27,7 +27,7 @@ export default function Login() {
           </p>
         </div>
         <div style={{ flex: 3 }}>
-          <p className="createaccountTxt">Вход в акканут</p>
+          <p className="createaccountTxt">Вход в аккаунт</p>
           <input
             type="email"
             name=""
